@@ -383,7 +383,7 @@
 
 ---
 
-# 📚 Explications
+# Explanations
 
 # Question 1 - Numéro de protocole TCP
 Le champ "Protocol" dans l'en-tête IP utilise la valeur **6** pour indiquer TCP, **17** pour UDP, et **1** pour ICMP. Ce champ permet le démultiplexage vers le protocole approprié.
