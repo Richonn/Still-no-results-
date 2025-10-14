@@ -385,167 +385,168 @@
 
 # Explanations
 
-# Question 1 - Numéro de protocole TCP
+# Question 1
 Le champ "Protocol" dans l'en-tête IP utilise la valeur **6** pour indiquer TCP, **17** pour UDP, et **1** pour ICMP. Ce champ permet le démultiplexage vers le protocole approprié.
 
-# Question 2 - Taille maximale paquet IP
+# Question 2
 Le champ "Total Length" fait 16 bits, permettant une valeur maximale de 2^16 - 1 = **65535 octets** (en-tête + données).
 
-# Question 3 - Unité de l'offset
+# Question 3
 Le Fragment Offset est exprimé en **unités de 8 octets** (64 bits). Cela permet de réassembler correctement les fragments.
 
-# Question 4 - Protocole ARP
+# Question 4
 **ARP (Address Resolution Protocol)** traduit une adresse IP en adresse MAC. RARP fait l'inverse (MAC → IP).
 
-# Question 5 - Portée d'ARP
+# Question 5
 ARP fonctionne **uniquement sur le réseau local** car il utilise des trames broadcast au niveau liaison. Il n'est pas routable.
 
-# Question 6 - ICMP Type 8
+# Question 6
 Type 8 = **Echo Request** (ping). Type 0 = Echo Reply.
 
-# Question 7 - ICMP Type 3 Code 3
+# Question 7
 Type 3 = Destination Unreachable. Code 3 = **Port Unreachable** (port UDP fermé).
 
-# Question 8 - Cache ARP
+# Question 8
 La commande `arp -a` affiche le cache ARP contenant les correspondances IP ↔ MAC récentes.
 
-# Question 9 - Numéro de protocole UDP
+# Question 9
 UDP utilise le numéro de protocole **17** (0x11) dans l'en-tête IP.
 
-# Question 10 - Taille en-tête UDP
+# Question 10
 L'en-tête UDP contient 4 champs : Source Port, Destination Port, Length, Checksum = **8 octets fixes**.
 
-# Question 11 - Three-way handshake
+# Question 11
 Établissement de connexion TCP : **SYN → SYN/ACK → ACK**.
 
-# Question 12 - Window Size TCP
+# Question 12
 Le champ Window Size indique le nombre d'octets que le récepteur peut recevoir, permettant le **contrôle de flux**.
 
-# Question 13 - Flag FIN
+# Question 13
 Le flag **FIN** (Finish) indique la fin du flux de données d'un côté de la connexion.
 
-# Question 14 - Hôtes pour /24
+# Question 14
 /24 = 256 adresses - 2 (réseau + broadcast) = **254 hôtes utilisables**.
 
-# Question 15 - Adresses privées
+# Question 15
 Les plages privées RFC 1918 : **10.0.0.0/8**, 172.16.0.0/12, 192.168.0.0/16.
 
-# Question 16 - Durée de reconnaissance
+# Question 16
 Un attaquant passe **plus de 90% du temps** en phase de reconnaissance avant l'attaque réelle.
 
-# Question 17 - Outil sous-domaines
+# Question 17
 **Sublist3r** automatise la recherche de sous-domaines via multiples sources (Google, Bing, Netcraft, etc.).
 
-# Question 18 - Surnom de Shodan
+# Question 18
 CNN a surnommé Shodan **"Le moteur de recherche le plus terrifiant d'Internet"** car il révèle des objets IoT vulnérables.
 
-# Question 19 - Requête Google filetype
+# Question 19
 La syntaxe correcte est `site:exemple.com filetype:pdf` pour trouver des fichiers PDF.
 
-# Question 20 - Opérateur intitle
+# Question 20
 `intitle:` cherche dans les **titres de pages HTML** (balise `<title>`).
 
-# Question 21 - Outil métadonnées
+# Question 21
 **FOCA** (Fingerprinting Organizations with Collected Archives) extrait les métadonnées des fichiers PDF, DOC, XLS, etc.
 
-# Question 22 - robots.txt
+# Question 22
 Le fichier robots.txt indique aux moteurs de recherche **quelles pages ne pas indexer**. Paradoxalement, c'est une mine d'or pour les attaquants.
 
-# Question 23 - Commande WHOIS
+# Question 23
 `whois exemple.com` interroge les bases de données WHOIS pour obtenir les informations d'enregistrement du domaine.
 
-# Question 24 - Enregistrement DNS MX
+# Question 24
 Les enregistrements **MX (Mail Exchange)** indiquent les serveurs de messagerie du domaine.
 
-# Question 25 - Zone transfer
+# Question 25
 `dig AXFR @ns1.exemple.com exemple.com` tente un **zone transfer** pour récupérer tous les enregistrements DNS.
 
-# Question 26 - Outil wordlist
+# Question 26
 **cewl** (Custom Word List generator) parcourt un site web et extrait les mots pour créer une wordlist.
 
-# Question 27 - InSpy et LinkedIn
+# Question 27
 **InSpy** est spécialisé pour collecter des informations depuis **LinkedIn** (technologies, profils, compétences).
 
-# Question 28 - Dumpster diving
+# Question 28
 **Dumpster diving** (fouille de poubelles) permet de trouver des documents sensibles non détruits.
 
-# Question 29 - Sources de theHarvester
+# Question 29
 theHarvester utilise **Google, Bing, LinkedIn, PGP, Shodan** et d'autres sources pour collecter emails et sous-domaines.
 
-# Question 30 - Maltego
+# Question 30
 **Maltego** est décrit comme le **"couteau suisse" du footprinting** avec ses capacités de visualisation et transformations.
 
-# Question 31 - TCP SYN scan
+# Question 31
 `nmap -sS` effectue un **TCP SYN scan** (half-open), plus furtif que le connect scan.
 
-# Question 32 - TCP connect scan
+# Question 32
 Le TCP connect scan (`-sT`) **complète le three-way handshake**, laissant des traces dans les logs.
 
-# Question 33 - Scan le plus furtif
+# Question 33
 Le **TCP SYN scan** (`-sS`) est le plus furtif car il ne complète pas la connexion.
 
-# Question 34 - Réponse au FIN
+# Question 34
 Selon RFC 793, un port **ouvert** ne répond **pas** à un paquet FIN non sollicité.
 
-# Question 35 - Xmas Tree scan
+# Question 35
 Le Xmas Tree scan active les flags **FIN + URG + PSH** (tous les "bits s'allument").
 
-# Question 36 - Option nmap -O
+# Question 36
 `-O` active la **détection de système d'exploitation** par fingerprinting TCP/IP.
 
-# Question 37 - TTL Linux
+# Question 37
 Linux utilise typiquement un **TTL initial de 64**.
 
-# Question 38 - TTL Windows
+# Question 38
 Windows (XP/Vista/7/10/11) utilise un **TTL initial de 128**.
 
-# Question 39 - Détection passive OS
+# Question 39
 **p0f** effectue de la détection passive en analysant le trafic capturé sans envoyer de paquets.
 
-# Question 40 - fping parallèle
+# Question 40
 **fping** envoie des pings **en parallèle** pour accélérer le balayage, contrairement au ping standard.
 
-# Question 41 - Scan UDP
+# Question 41
 `-sU` scanne les **ports UDP** (lent car pas de ACK et timeouts).
 
-# Question 42 - Vitesse scan UDP
+# Question 42
 Un scan UDP est **beaucoup plus lent** qu'un scan TCP en raison des timeouts et des limitations ICMP rate limiting.
 
-# Question 43 - Niveau timing -T4
+# Question 43
 `-T4` correspond au niveau **Aggressive** (scan rapide avec max scan delay de 10ms).
 
-# Question 44 - Port 22
+# Question 44
 Le port **22** correspond au service **SSH** (Secure Shell).
 
-# Question 45 - Port 443
+# Question 45
 Le port **443** correspond au service **HTTPS** (HTTP sécurisé par TLS/SSL).
 
-# Question 46 - Principe traceroute
+# Question 46
 traceroute utilise des **valeurs TTL incrémentales** (1, 2, 3...) pour découvrir le chemin réseau.
 
-# Question 47 - Principe TOR
+# Question 47
 TOR utilise le **routage en oignon** (onion routing) avec chiffrement multi-couches.
 
-# Question 48 - Tails
+# Question 48
 **Tails** est un système d'exploitation **amnésique** qui tourne en mémoire vive et n'écrit rien sur le disque.
 
-# Question 49 - Protocole par défaut nmap
+# Question 49
 nmap scanne les ports **TCP** par défaut. Il faut `-sU` pour UDP.
 
-# Question 50 - Option decoys
+# Question 50
 `-D` utilise des **adresses IP leurres** pour masquer la vraie source du scan.
 
-# Question 51 - Pare-feu Stateful
+# Question 51
 Un pare-feu **Stateful (SPI)** garde en mémoire les connexions établies et bloque les **paquets ACK sans connexion préalable**.
 
-# Question 52 - Surnom Netcat
+# Question 52
 Netcat est appelé le **"couteau suisse" du réseau** pour sa polyvalence.
 
-# Question 53 - Nmap Scripting Engine
+# Question 53
 `--script` active le **NSE (Nmap Scripting Engine)** pour des fonctionnalités avancées (vuln, brute force, etc.).
 
-# Question 54 - hping3
+# Question 54
 **hping3** permet de **construire des paquets TCP/IP personnalisés** pour des tests avancés.
 
-# Question 55 - Idle Scan
+# Question 55
 Un Idle Scan utilise l'**IP d'une machine tierce** (zombie) pour masquer l'origine du scan.
+
